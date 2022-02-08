@@ -1,66 +1,54 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Creación de un CMS con Laravel
 
-## About Laravel
+Siguiendo [este](https://webmobtuts.com/backend-development/building-a-simple-cms-with-laravel-breeze/) tutorial, dentro de la página de [webmobtuts](https://webmobtuts.com/).
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Creamos un directorio dentro de nuestra carpeta de laragon/www mediante el siguiente comando:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+1. ```
+   composer create-project laravel/laravel lara-breeze-cms --prefer-dist
+   ```
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Instalamos el paquete de laravel breeze:
 
-## Learning Laravel
+1. ```
+   composer require laravel/breeze
+   ```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+2. ```
+   php artisan breeze:install
+   ```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Compilamos los activos que viene de base con laravel breeze usando npm:
 
-## Laravel Sponsors
+3. ```
+   npm install
+   npm run dev
+   ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Creamos una BBDD llamada en mi caso 'lara_breeze_cms' y actualizamos el archivo env. con los datos pertienentes del nombre de la BBDD, el usuario empleado y su contraseña. Finalmente, migramos la BBDD:
 
-### Premium Partners
+4. ```
+   php artisan migrate
+   ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-- **[Romega Software](https://romegasoftware.com)**
+Creamos dos módulos para el cms de categorias y artículos:
 
-## Contributing
+5. ```
+   php artisan make:model Category -m
+   php artisan make:model Post -m
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+El siguiente paso e poblar y actualizar una serie de directorios dentro de los directorios existentes de migrations, Models, Resources/views/admin, app/Http/Controllers/Admin. 
 
-## Code of Conduct
+Después de continuar el tutorial añadiendo el código a cada fichero y corigiendo las líneas de código, la página resultado de todos los pasos da error. Aparece una tabla con los contenidos, pero muestra la siguiente página:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+![image](https://user-images.githubusercontent.com/91055754/152993217-8b12e2d2-10f7-4dc6-851d-344b5d3b010a.png)
 
-## Security Vulnerabilities
+Al entrar a través del localhost/lara-breeze-cms/public/dashboard deja entrar a la pantalla de Login, en mi caso, me resgistré y luego entré. En el navegador, salían varias de las páginas:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+![FireShot Capture 038 - Laravel - localhost](https://user-images.githubusercontent.com/91055754/152993486-2969728f-a0e9-4043-ac32-4cb817acbb66.png)
+![FireShot Capture 042 - lara_breeze_cms - localhost](https://user-images.githubusercontent.com/91055754/152993652-155cc620-1392-42cb-89ba-f4f022113c51.png)
+![FireShot Capture 043 - lara_breeze_cms - localhost](https://user-images.githubusercontent.com/91055754/152993711-9ed9f00a-9797-44ab-b73a-316701fdb71b.png)
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
