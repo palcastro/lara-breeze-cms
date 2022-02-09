@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+
 
 ## Creación de un CMS con Laravel
 
@@ -52,3 +52,4 @@ Al entrar a través del localhost/lara-breeze-cms/public/dashboard deja entrar a
 ![FireShot Capture 042 - lara_breeze_cms - localhost](https://user-images.githubusercontent.com/91055754/152993652-155cc620-1392-42cb-89ba-f4f022113c51.png)
 ![FireShot Capture 043 - lara_breeze_cms - localhost](https://user-images.githubusercontent.com/91055754/152993711-9ed9f00a-9797-44ab-b73a-316701fdb71b.png)
 
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
